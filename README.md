@@ -6,6 +6,8 @@
 
 `wsclean` [doc](https://wsclean.readthedocs.io/en/latest/) for creating image from interferometry visibility (MS)
 
+`lofar-sun-tools` [doc](https://lofar-sun-tools.readthedocs.io/) tools for dynamic spectrum imaging post processing 
+
 ## Using contianer
 
 Singularity (and docker) can provide a relatively isolated env with all software installed, fully functional, plugin and play.
