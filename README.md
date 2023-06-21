@@ -15,6 +15,7 @@ Singularity (and docker) can provide a relatively isolated env with all software
 simple example:
 
 (1) start a interactive shell from a image
+
 ```bash
 singularity shell /dir/to/your-image.sif
 ```
@@ -23,6 +24,25 @@ singularity shell /dir/to/your-image.sif
 ```bash
 singularity exec /dir/to/your-image.sif echo 'haha'
 ```
+
+#### Regularly used args
+
+* `--bind` or `-B` 
+
+binding directory, expose local directories to the contianer.
+
+For example, binding your current directory to a direcotry named `/home/secret/files/`, the command would be: 
+
+```bash
+singularity shell -B $PWD:/home/secret/files/ your-image.sif
+```
+
+then you can access the files in host:$PWD at `/home/secret/files/` from inside the contianer.
+
+* `-C`
+
+fully contianed, isolate the /bin and /lib, recommend to use for not mixing the enviroment commands
+
 
 ### Contianers for solar data processing
 
