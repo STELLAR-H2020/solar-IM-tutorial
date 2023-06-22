@@ -72,3 +72,21 @@ singularity exec --bind $PWD:/home/runtime -C {$SG_DIR_SIF}  jupyter lab --noteb
 
 `SG_DIR_SIF` is the directory to the singularity image.
 `SG_PORT_NUM` is the port number to connect to the jupyter-lab
+
+## Calibration
+
+TBD
+
+## Imaging
+
+Go to the location where the data is stored, start linc.sif singularity:
+
+```bash
+singularity shell -B $PWD:/run/mnt /data/containers/linc.sif
+```
+
+then run imaging with wsclean:
+
+```bash
+wsclean -j 2 -mem 10 -size 512 512 -scale 12asec -pol I -data-column CORRECTED_DATA -niter 1000 -intervals-out 2 -interval 5010 5020 -name SB150 L242126_SB150_uv.dppp.MS
+```
